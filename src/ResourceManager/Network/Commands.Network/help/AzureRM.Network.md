@@ -240,10 +240,10 @@ Lists network usages for a subscription
 Gets the properties of a Network Watcher
 
 ### [Get-AzureRmNetworkWatcherConnectionMonitor](Get-AzureRmNetworkWatcherConnectionMonitor.md)
-Gets a connection monitor
+Returns connection monitor with specified name or the list of connection monitors
 
 ### [Get-AzureRmNetworkWatcherConnectionMonitorReport](Get-AzureRmNetworkWatcherConnectionMonitorReport.md)
-Gets a snapshot of the most recent connection states
+Query a snapshot of the most recent connection states.
 
 ### [Get-AzureRmNetworkWatcherFlowLogStatus](Get-AzureRmNetworkWatcherFlowLogStatus.md)
 Gets the status of flow logging on a resource.
@@ -453,7 +453,7 @@ Creates a network security rule configuration.
 Creates a new Network Watcher resource.
 
 ### [New-AzureRmNetworkWatcherConnectionMonitor](New-AzureRmNetworkWatcherConnectionMonitor.md)
-Creates a new connection monitor resource.
+Creates a connection monitor.
 
 ### [New-AzureRmNetworkWatcherPacketCapture](New-AzureRmNetworkWatcherPacketCapture.md)
 Creates a new packet capture resource and starts a packet capture session on a VM.
@@ -463,6 +463,9 @@ Creates a new packet capture filter object.
 
 ### [New-AzureRmPublicIpAddress](New-AzureRmPublicIpAddress.md)
 Creates a public IP address.
+
+### [New-AzureRmPublicIpTag](New-AzureRmPublicIpTag.md)
+Creates an IP Tag.
 
 ### [New-AzureRmRouteConfig](New-AzureRmRouteConfig.md)
 Creates a route for a route table.
@@ -595,6 +598,9 @@ Removes a network security rule from a network security group.
 
 ### [Remove-AzureRmNetworkWatcher](Remove-AzureRmNetworkWatcher.md)
 Removes a Network Watcher.
+
+### [Remove-AzureRmNetworkWatcherConnectionMonitor](Remove-AzureRmNetworkWatcherConnectionMonitor.md)
+Remove connection monitor.
 
 ### [Remove-AzureRmNetworkWatcherPacketCapture](Remove-AzureRmNetworkWatcherPacketCapture.md)
 Removes a packet capture resource.
@@ -740,11 +746,11 @@ Sets the goal state for a network security group.
 ### [Set-AzureRmNetworkSecurityRuleConfig](Set-AzureRmNetworkSecurityRuleConfig.md)
 Sets the goal state for a network security rule configuration.
 
-### [Set-AzureRmNetworkWatcherConnectionMonitor](Set-AzureRmNetworkWatcherConnectionMonitor.md)
-Modifies a connection monitor.
-
 ### [Set-AzureRmNetworkWatcherConfigFlowLog](Set-AzureRmNetworkWatcherConfigFlowLog.md)
 Configures flow logging for a target resource.
+
+### [Set-AzureRmNetworkWatcherConnectionMonitor](Set-AzureRmNetworkWatcherConnectionMonitor.md)
+Update a connection monitor.
 
 ### [Set-AzureRmPublicIpAddress](Set-AzureRmPublicIpAddress.md)
 Sets the goal state for a public IP address.
@@ -789,7 +795,7 @@ Configures the goal state for a subnet configuration in a virtual network.
 Starts an application gateway.
 
 ### [Start-AzureRmNetworkWatcherConnectionMonitor](Start-AzureRmNetworkWatcherConnectionMonitor.md)
-Starts a connection monitor.
+Start a connection monitor
 
 ### [Start-AzureRmNetworkWatcherResourceTroubleshooting](Start-AzureRmNetworkWatcherResourceTroubleshooting.md)
 Starts troubleshooting on a Networking resource in Azure.
@@ -798,7 +804,7 @@ Starts troubleshooting on a Networking resource in Azure.
 Stops an application gateway
 
 ### [Stop-AzureRmNetworkWatcherConnectionMonitor](Stop-AzureRmNetworkWatcherConnectionMonitor.md)
-Stops a running connection monitor
+Stop a connection monitor
 
 ### [Stop-AzureRmNetworkWatcherPacketCapture](Stop-AzureRmNetworkWatcherPacketCapture.md)
 Stops a running packet capture session

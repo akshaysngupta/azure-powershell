@@ -14,7 +14,7 @@ Creates a SKU for an application gateway.
 ## SYNTAX
 
 ```
-New-AzureRmApplicationGatewaySku -Name <String> -Tier <String> -Capacity <Int32>
+New-AzureRmApplicationGatewaySku -Name <String> -Tier <String> [-Capacity <Int32>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ Type: Int32
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -77,7 +77,7 @@ The acceptable values for this parameter are:
 Type: String
 Parameter Sets: (All)
 Aliases: 
-Accepted values: Standard_Small, Standard_Medium, Standard_Large, WAF_Medium, WAF_Large
+Accepted values: Standard_Small, Standard_Medium, Standard_Large, WAF_Medium, WAF_Large, Standard_v2, WAF_v2
 
 Required: True
 Position: Named
@@ -97,7 +97,7 @@ The acceptable values for this parameter are:
 Type: String
 Parameter Sets: (All)
 Aliases: 
-Accepted values: Standard, WAF
+Accepted values: Standard, WAF, Standard_v2, WAF_v2
 
 Required: True
 Position: Named

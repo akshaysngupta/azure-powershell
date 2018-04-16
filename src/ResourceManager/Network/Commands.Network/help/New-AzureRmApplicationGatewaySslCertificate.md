@@ -14,8 +14,9 @@ Creates an SSL certificate for an Azure application gateway.
 ## SYNTAX
 
 ```
-New-AzureRmApplicationGatewaySslCertificate -Name <String> -CertificateFile <String> -Password <SecureString>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+New-AzureRmApplicationGatewaySslCertificate -Name <String> [-CertificateFile <String>]
+ [-Password <SecureString>] [-KeyVaultSecretId <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,7 +42,7 @@ Type: String
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -55,6 +56,19 @@ The credentials, account, tenant, and subscription used for communication with a
 Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyVaultSecretId
+KeyVault Secret Id for Certificate```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
 
 Required: False
 Position: Named
@@ -86,7 +100,7 @@ Type: SecureString
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
