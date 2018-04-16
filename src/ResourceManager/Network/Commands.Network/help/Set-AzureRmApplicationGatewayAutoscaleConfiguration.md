@@ -1,6 +1,6 @@
 ---
 external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
-online version: 
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermapplicationgatewayautoscaleconfiguration
 schema: 2.0.0
 ---
 
@@ -23,10 +23,10 @@ Set-AzureRmApplicationGatewayAutoscaleConfiguration -ApplicationGateway <PSAppli
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Set-AzureRmApplicationGatewayAutoscaleConfiguration -ApplicationGateway $appgw -Bounds $bounds
 ```
 
-{{ Add example description here }}
+set the auto scale to appgw
 
 ## PARAMETERS
 

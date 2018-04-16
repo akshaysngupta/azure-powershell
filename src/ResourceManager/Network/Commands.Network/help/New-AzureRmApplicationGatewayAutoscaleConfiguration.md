@@ -1,6 +1,6 @@
 ---
 external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
-online version: 
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermapplicationgatewayautoscaleconfiguration
 schema: 2.0.0
 ---
 
@@ -23,10 +23,10 @@ New-AzureRmApplicationGatewayAutoscaleConfiguration -Bounds <PSApplicationGatewa
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> $autos = New-AzureRmApplicationGatewayAutoscaleConfiguration -Bounds $bound
 ```
 
-{{ Add example description here }}
+new auto scale object
 
 ## PARAMETERS
 

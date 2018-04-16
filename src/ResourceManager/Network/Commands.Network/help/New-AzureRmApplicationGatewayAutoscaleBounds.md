@@ -1,6 +1,6 @@
 ---
 external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
-online version: 
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermapplicationgatewayautoscalebounds
 schema: 2.0.0
 ---
 
@@ -23,10 +23,10 @@ New-AzureRmApplicationGatewayAutoscaleBounds [-Min <Int32>] [-Max <Int32>]
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> $bound = New-AzureRmApplicationGatewayAutoscaleBounds -Min 2 -Max 3
 ```
 
-{{ Add example description here }}
+Create bound object.
 
 ## PARAMETERS
 

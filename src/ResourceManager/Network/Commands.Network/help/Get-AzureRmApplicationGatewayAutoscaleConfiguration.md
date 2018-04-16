@@ -1,6 +1,6 @@
 ---
 external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
-online version: 
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermapplicationgatewayautoscaleconfiguration
 schema: 2.0.0
 ---
 
@@ -23,10 +23,10 @@ Get-AzureRmApplicationGatewayAutoscaleConfiguration -ApplicationGateway <PSAppli
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> $autos = Get-AzureRmApplicationGatewayAutoscaleConfiguration -ApplicationGateway $appgw
 ```
 
-{{ Add example description here }}
+Get auto scale{{ Add example description here }}
 
 ## PARAMETERS
 

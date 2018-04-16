@@ -1,6 +1,6 @@
 ---
 external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
-online version: 
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/remove-azurermapplicationgatewayautoscaleconfiguration
 schema: 2.0.0
 ---
 
@@ -23,10 +23,10 @@ Remove-AzureRmApplicationGatewayAutoscaleConfiguration -ApplicationGateway <PSAp
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> $appgw = Remove-AzureRmApplicationGatewayAutoscaleConfiguration -ApplicationGateway $appgw
 ```
 
-{{ Add example description here }}
+remove auto scale settings
 
 ## PARAMETERS
 

@@ -433,7 +433,9 @@ Accept wildcard characters: False
 ```
 
 ### -UserAssignedIdentityId
-User Assigned Identity to be associated with application gateway.```yaml
+User Assigned Identity to be associated with application gateway.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -462,7 +464,9 @@ Accept wildcard characters: False
 ```
 
 ### -Zones
-A list of availability zones denoting where the application gateway needs to come from.```yaml
+A list of availability zones denoting where the application gateway needs to come from.
+
+```yaml
 Type: System.Collections.Generic.IList`1[System.String]
 Parameter Sets: (All)
 Aliases: 
