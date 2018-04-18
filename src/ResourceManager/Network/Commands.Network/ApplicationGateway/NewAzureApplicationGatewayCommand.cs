@@ -157,7 +157,7 @@ namespace Microsoft.Azure.Commands.Network
         [Parameter(
             Mandatory = false,
             HelpMessage = "A list of availability zones denoting where the application gateway needs to come from.")]
-        public IList<string> Zones { get; set; }
+        public List<string> Zones { get; set; }
 
         [Parameter(
             Mandatory = false,
