@@ -39,15 +39,15 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The IPSec encryption algorithm (IKE Phase 1)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IpsecEncryption.None,
-            MNM.IpsecEncryption.DES,
-            MNM.IpsecEncryption.DES3,
-            MNM.IpsecEncryption.AES128,
-            MNM.IpsecEncryption.AES192,
-            MNM.IpsecEncryption.AES256,
-            MNM.IpsecEncryption.GCMAES128,
-            MNM.IpsecEncryption.GCMAES192,
-            MNM.IpsecEncryption.GCMAES256,
+            "None",
+            "DES",
+            "DES3",
+            "AES128",
+            "AES192",
+            "AES256",
+            "GCMAES128",
+            "GCMAES192",
+            "GCMAES256",
             IgnoreCase = false)]
         public string IpsecEncryption { get; set; }
 
@@ -56,12 +56,12 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The IPSec integrity algorithm (IKE Phase 1)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IpsecIntegrity.MD5,
-            MNM.IpsecIntegrity.SHA1,
-            MNM.IpsecIntegrity.SHA256,
-            MNM.IpsecEncryption.GCMAES128,
-            MNM.IpsecEncryption.GCMAES192,
-            MNM.IpsecEncryption.GCMAES256,
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "GCMAES128",
+            "GCMAES192",
+            "GCMAES256",
             IgnoreCase = false)]
         public string IpsecIntegrity { get; set; }
 
@@ -70,11 +70,11 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The IKE encryption algorithm (IKE Phase 2)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IkeEncryption.DES,
-            MNM.IkeEncryption.DES3,
-            MNM.IkeEncryption.AES128,
-            MNM.IkeEncryption.AES192,
-            MNM.IkeEncryption.AES256,
+            "DES",
+            "DES3",
+            "AES128",
+            "AES192",
+            "AES256",
             IgnoreCase = false)]
         public string IkeEncryption { get; set; }
 
@@ -83,10 +83,10 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The IKE integrity algorithm (IKE Phase 2)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IkeIntegrity.MD5,
-            MNM.IkeIntegrity.SHA1,
-            MNM.IkeIntegrity.SHA256,
-            MNM.IkeIntegrity.SHA384,
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA384",
             IgnoreCase = false)]
         public string IkeIntegrity { get; set; }
 
@@ -95,14 +95,14 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The DH Groups used in IKE Phase 1 for initial SA")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.DhGroup.None,
-            MNM.DhGroup.DHGroup1,
-            MNM.DhGroup.DHGroup14,
-            MNM.DhGroup.DHGroup2,
-            MNM.DhGroup.DHGroup2048,
-            MNM.DhGroup.DHGroup24,
-            MNM.DhGroup.ECP256,
-            MNM.DhGroup.ECP384,
+            "None",
+            "DHGroup1",
+            "DHGroup14",
+            "DHGroup2",
+            "DHGroup2048",
+            "DHGroup24",
+            "ECP256",
+            "ECP384",
             IgnoreCase = false)]
         public string DhGroup { get; set; }
 
@@ -111,13 +111,13 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The DH Groups used in IKE Phase 2 for new child SA")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.PfsGroup.None,
-            MNM.PfsGroup.PFS1,
-            MNM.PfsGroup.PFS2,
-            MNM.PfsGroup.PFS2048,
-            MNM.PfsGroup.PFS24,
-            MNM.PfsGroup.ECP256,
-            MNM.PfsGroup.ECP384,
+            "None",
+            "PFS1",
+            "PFS2",
+            "PFS2048",
+            "PFS24",
+            "ECP256",
+            "ECP384",
             IgnoreCase = false)]
         public string PfsGroup { get; set; } 
 

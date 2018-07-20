@@ -58,8 +58,8 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The load balancer Sku name.")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.LoadBalancerSkuName.Basic,
-            MNM.LoadBalancerSkuName.Standard,
+            "Basic",
+            "Standard",
             IgnoreCase = true)]
         public string Sku { get; set; }
 

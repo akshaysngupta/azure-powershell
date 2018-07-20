@@ -44,8 +44,8 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "ProcessorArchitecture")]
         [ValidateSet(
-        MNM.ProcessorArchitecture.Amd64,
-        MNM.ProcessorArchitecture.X86,
+        "Amd64",
+        "X86",
         IgnoreCase = true)]
         public string ProcessorArchitecture { get; set; }
 

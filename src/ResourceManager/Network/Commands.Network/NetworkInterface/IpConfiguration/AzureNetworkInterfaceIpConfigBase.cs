@@ -31,8 +31,8 @@ namespace Microsoft.Azure.Commands.Network
             Mandatory = false,
             HelpMessage = "The ipversion of the ipconfiguration")]
         [ValidateSet(
-            MNM.IPVersion.IPv4,
-            MNM.IPVersion.IPv6,
+            "IPv4",
+            "IPv6",
             IgnoreCase = true)]
         [ValidateNotNullOrEmpty]
         public string PrivateIpAddressVersion { get; set; }

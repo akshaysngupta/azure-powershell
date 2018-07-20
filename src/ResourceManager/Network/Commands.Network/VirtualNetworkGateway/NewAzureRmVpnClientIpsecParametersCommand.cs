@@ -39,10 +39,10 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The Vpnclient IPSec encryption algorithm (IKE Phase 1)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IpsecEncryption.GCMAES256,
-            MNM.IpsecEncryption.GCMAES128,
-            MNM.IpsecEncryption.AES256,
-            MNM.IpsecEncryption.AES128)]
+            "GCMAES256",
+            "GCMAES128",
+            "AES256",
+            "AES128")]
         public string IpsecEncryption { get; set; }
 
         [Parameter(
@@ -50,9 +50,9 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The Vpnclient IPSec integrity algorithm (IKE Phase 1)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IpsecIntegrity.GCMAES256,
-            MNM.IpsecIntegrity.GCMAES128,
-            MNM.IpsecIntegrity.SHA256)]
+            "GCMAES256",
+            "GCMAES128",
+            "SHA256")]
         public string IpsecIntegrity { get; set; }
 
         [Parameter(
@@ -60,10 +60,10 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The Vpnclient IKE encryption algorithm (IKE Phase 2)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IkeEncryption.GCMAES256,
-            MNM.IkeEncryption.GCMAES128,
-            MNM.IkeEncryption.AES256,
-            MNM.IkeEncryption.AES128)]
+            "GCMAES256",
+            "GCMAES128",
+            "AES256",
+            "AES128")]
         public string IkeEncryption { get; set; }
 
         [Parameter(
@@ -71,8 +71,8 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The Vpnclient IKE integrity algorithm (IKE Phase 2)")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IkeIntegrity.SHA384,
-            MNM.IkeIntegrity.SHA256)]
+            "SHA384",
+            "SHA256")]
         public string IkeIntegrity { get; set; }
 
         [Parameter(
@@ -80,11 +80,11 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The Vpnclient DH Groups used in IKE Phase 1 for initial SA")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.DhGroup.DHGroup24,
-            MNM.DhGroup.ECP384,
-            MNM.DhGroup.ECP256,
-            MNM.DhGroup.DHGroup14,
-            MNM.DhGroup.DHGroup2)]
+            "DHGroup24",
+            "ECP384",
+            "ECP256",
+            "DHGroup14",
+            "DHGroup2")]
         public string DhGroup { get; set; }
 
         [Parameter(
@@ -92,13 +92,13 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The Vpnclient PFS Groups used in IKE Phase 2 for new child SA")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.PfsGroup.PFS24,
-            MNM.PfsGroup.PFSMM,
-            MNM.PfsGroup.ECP384,
-            MNM.PfsGroup.ECP256,
-            MNM.PfsGroup.PFS14,
-            MNM.PfsGroup.PFS2,
-            MNM.PfsGroup.None)]
+            "PFS24",
+            "PFSMM",
+            "ECP384",
+            "ECP256",
+            "PFS14",
+            "PFS2",
+            "None")]
         public string PfsGroup { get; set; }
 
         public override void Execute()
@@ -111,8 +111,8 @@ namespace Microsoft.Azure.Commands.Network
             vpnclientIPsecParameters.SaLifeTimeSeconds = (!this.MyInvocation.BoundParameters.ContainsKey("SaLifeTime")) ? 7200 : this.SALifeTime;
             vpnclientIPsecParameters.SaDataSizeKilobytes = (!this.MyInvocation.BoundParameters.ContainsKey("SaDataSize")) ? 104857600 : this.SADataSize;
 
-            vpnclientIPsecParameters.IpsecEncryption = (!this.MyInvocation.BoundParameters.ContainsKey("IpsecEncryption")) ? MNM.IpsecEncryption.GCMAES256 : this.IpsecEncryption;
-            vpnclientIPsecParameters.IpsecIntegrity = (!this.MyInvocation.BoundParameters.ContainsKey("IpsecIntegrity")) ? MNM.IpsecIntegrity.GCMAES256 : this.IpsecIntegrity;
+            vpnclientIPsecParameters.IpsecEncryption = (!this.MyInvocation.BoundParameters.ContainsKey("IpsecEncryption")) ? "GCMAES256" : this.IpsecEncryption;
+            vpnclientIPsecParameters.IpsecIntegrity = (!this.MyInvocation.BoundParameters.ContainsKey("IpsecIntegrity")) ? "GCMAES256" : this.IpsecIntegrity;
 
             // GCM matching check
             if ((vpnclientIPsecParameters.IpsecEncryption.Contains("GCM") || vpnclientIPsecParameters.IpsecIntegrity.Contains("GCM"))
@@ -121,10 +121,10 @@ namespace Microsoft.Azure.Commands.Network
                 throw new ArgumentException("Vpnclient IpsecEncryption and IpsecIntegrity must use matching GCM algorithms");
             }
 
-            vpnclientIPsecParameters.IkeEncryption = (!this.MyInvocation.BoundParameters.ContainsKey("IkeEncryption")) ? MNM.IkeEncryption.AES256 : this.IkeEncryption;
-            vpnclientIPsecParameters.IkeIntegrity = (!this.MyInvocation.BoundParameters.ContainsKey("IkeIntegrity")) ? MNM.IkeIntegrity.SHA256 : this.IkeIntegrity;
-            vpnclientIPsecParameters.DhGroup = (!this.MyInvocation.BoundParameters.ContainsKey("DhGroup")) ? MNM.DhGroup.DHGroup24 : this.DhGroup;
-            vpnclientIPsecParameters.PfsGroup = (!this.MyInvocation.BoundParameters.ContainsKey("PfsGroup")) ? MNM.PfsGroup.PFS24 : this.PfsGroup;
+            vpnclientIPsecParameters.IkeEncryption = (!this.MyInvocation.BoundParameters.ContainsKey("IkeEncryption")) ? "AES256" : this.IkeEncryption;
+            vpnclientIPsecParameters.IkeIntegrity = (!this.MyInvocation.BoundParameters.ContainsKey("IkeIntegrity")) ? "SHA256" : this.IkeIntegrity;
+            vpnclientIPsecParameters.DhGroup = (!this.MyInvocation.BoundParameters.ContainsKey("DhGroup")) ? "DHGroup24" : this.DhGroup;
+            vpnclientIPsecParameters.PfsGroup = (!this.MyInvocation.BoundParameters.ContainsKey("PfsGroup")) ? "PFS24" : this.PfsGroup;
 
             WriteObject(vpnclientIPsecParameters);
         }

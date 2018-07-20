@@ -41,7 +41,7 @@ namespace Microsoft.Azure.Commands.Network
         [Parameter(
             Mandatory = true,
             HelpMessage = "The transport protocol for the nat pool.")]
-        [ValidateSet(MNM.TransportProtocol.Tcp, MNM.TransportProtocol.Udp, IgnoreCase = true)]
+        [ValidateSet("Tcp", "Udp", IgnoreCase = true)]
         public string Protocol { get; set; }
 
         [Parameter(

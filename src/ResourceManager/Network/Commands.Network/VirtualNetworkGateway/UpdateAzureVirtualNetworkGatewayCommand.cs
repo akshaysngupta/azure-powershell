@@ -49,19 +49,19 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "The virtual network gateway's SKU")]
         [ValidateSet(
-            MNM.VirtualNetworkGatewaySkuTier.Basic,
-            MNM.VirtualNetworkGatewaySkuTier.Standard,
-            MNM.VirtualNetworkGatewaySkuTier.HighPerformance,
-            MNM.VirtualNetworkGatewaySkuTier.UltraPerformance,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw1,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw2,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw3,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw1AZ,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw2AZ,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw3AZ,
-            MNM.VirtualNetworkGatewaySkuTier.ErGw1AZ,
-            MNM.VirtualNetworkGatewaySkuTier.ErGw2AZ,
-            MNM.VirtualNetworkGatewaySkuTier.ErGw3AZ,
+            "Basic",
+            "Standard",
+            "HighPerformance",
+            "UltraPerformance",
+            "VpnGw1",
+            "VpnGw2",
+            "VpnGw3",
+            "VpnGw1AZ",
+            "VpnGw2AZ",
+            "VpnGw3AZ",
+            "ErGw1AZ",
+            "ErGw2AZ",
+            "ErGw3AZ",
             IgnoreCase = true)]
         public string GatewaySku { get; set; }
 
@@ -83,9 +83,9 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "A list of P2S VPN client tunneling protocols")]
         [ValidateSet(
-            MNM.VpnClientProtocol.SSTP,
-            MNM.VpnClientProtocol.IkeV2,
-            MNM.VpnClientProtocol.OpenVPN)]
+            "SSTP",
+            "IkeV2",
+            "OpenVPN")]
         [ValidateNotNullOrEmpty]
         public List<string> VpnClientProtocol { get; set; }
 

@@ -43,9 +43,9 @@ namespace Microsoft.Azure.Commands.Network
             Mandatory = false,		
             HelpMessage = "The PeeringType")]		
         [ValidateSet(		
-           MNM.ExpressRoutePeeringType.AzurePrivatePeering,		
-           MNM.ExpressRoutePeeringType.AzurePublicPeering,		
-           MNM.ExpressRoutePeeringType.MicrosoftPeering,		
+           "AzurePrivatePeering",
+           "AzurePublicPeering",		
+           "MicrosoftPeering",		
            IgnoreCase = true)]		
         public string PeeringType { get; set; }		
 		

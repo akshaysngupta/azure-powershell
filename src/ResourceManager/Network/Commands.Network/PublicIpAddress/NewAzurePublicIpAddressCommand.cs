@@ -60,8 +60,8 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The public IP Sku name.")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.PublicIPAddressSkuName.Basic,
-            MNM.PublicIPAddressSkuName.Standard,
+            "Basic",
+            "Standard",
             IgnoreCase = true)]
         public string Sku { get; set; }
 
@@ -71,8 +71,8 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The public IP address allocation method.")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IPAllocationMethod.Dynamic,
-            MNM.IPAllocationMethod.Static,
+            "Dynamic",
+            "Static",
             IgnoreCase = true)]
         public string AllocationMethod { get; set; }
 
@@ -82,8 +82,8 @@ namespace Microsoft.Azure.Commands.Network
             HelpMessage = "The public IP address version.")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-            MNM.IPVersion.IPv4,
-            MNM.IPVersion.IPv6,
+            "IPv4",
+            "IPv6",
             IgnoreCase = true)]
         public string IpAddressVersion { get; set; }
 

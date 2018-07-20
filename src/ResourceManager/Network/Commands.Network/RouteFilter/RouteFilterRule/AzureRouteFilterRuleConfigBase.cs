@@ -38,8 +38,8 @@ namespace Microsoft.Azure.Commands.Network
         [Parameter(Mandatory = true, HelpMessage = "The access type of the rule. Possible values are: 'Allow', 'Deny'")]
         [ValidateNotNullOrEmpty]
         [ValidateSet(
-           MNM.Access.Allow,
-           MNM.Access.Deny,
+           "Allow",
+           "Deny",
            IgnoreCase = true)]
         public virtual string Access { get; set; }
 

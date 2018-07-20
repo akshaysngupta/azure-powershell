@@ -89,8 +89,8 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "The type of this virtual network gateway: Vpn, ExoressRoute")]
         [ValidateSet(
-            MNM.VirtualNetworkGatewayType.Vpn,
-            MNM.VirtualNetworkGatewayType.ExpressRoute,
+            "Vpn",
+            "ExpressRoute",
             IgnoreCase = true)]
         public string GatewayType { get; set; }
 
@@ -99,8 +99,8 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "The type of the Vpn:PolicyBased/RouteBased")]
         [ValidateSet(
-            MNM.VpnType.PolicyBased,
-            MNM.VpnType.RouteBased,
+            "PolicyBased",
+            "RouteBased",
             IgnoreCase = true)]
         public string VpnType { get; set; }
 
@@ -120,19 +120,19 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "The Gateway Sku Tier")]
         [ValidateSet(
-            MNM.VirtualNetworkGatewaySkuTier.Basic,
-            MNM.VirtualNetworkGatewaySkuTier.Standard,
-            MNM.VirtualNetworkGatewaySkuTier.HighPerformance,
-            MNM.VirtualNetworkGatewaySkuTier.UltraPerformance,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw1,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw2,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw3,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw1AZ,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw2AZ,
-            MNM.VirtualNetworkGatewaySkuTier.VpnGw3AZ,
-            MNM.VirtualNetworkGatewaySkuTier.ErGw1AZ,
-            MNM.VirtualNetworkGatewaySkuTier.ErGw2AZ,
-            MNM.VirtualNetworkGatewaySkuTier.ErGw3AZ,
+            "Basic",
+            "Standard",
+            "HighPerformance",
+            "UltraPerformance",
+            "VpnGw1",
+            "VpnGw2",
+            "VpnGw3",
+            "VpnGw1AZ",
+            "VpnGw2AZ",
+            "VpnGw3AZ",
+            "ErGw1AZ",
+            "ErGw2AZ",
+            "ErGw3AZ",
             IgnoreCase = true)]
         public string GatewaySku { get; set; }
 
@@ -154,9 +154,9 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "The list of P2S VPN client tunneling protocols")]
         [ValidateSet(
-            MNM.VpnClientProtocol.SSTP,
-            MNM.VpnClientProtocol.IkeV2,
-            MNM.VpnClientProtocol.OpenVPN)]
+            "SSTP",
+            "IkeV2",
+            "OpenVPN")]
         [ValidateNotNullOrEmpty]
         public List<string> VpnClientProtocol { get; set; }
 
@@ -229,7 +229,7 @@ namespace Microsoft.Azure.Commands.Network
             string continueMsg = Properties.Resources.CreatingResourceMessage;
             bool force = true;
             if (!string.IsNullOrEmpty(GatewaySku)
-                && GatewaySku.Equals(MNM.VirtualNetworkGatewaySkuTier.UltraPerformance, StringComparison.InvariantCultureIgnoreCase))
+                && GatewaySku.Equals("UltraPerformance", StringComparison.InvariantCultureIgnoreCase))
             {
                 warningMsg = string.Format(Properties.Resources.UltraPerformaceGatewayWarning, this.Name);
                 force = false;
@@ -276,9 +276,9 @@ namespace Microsoft.Azure.Commands.Network
                 vnetGateway.Sku = null;
             }
 
-            if (this.EnableActiveActiveFeature.IsPresent && !this.VpnType.Equals(MNM.VpnType.RouteBased))
+            if (this.EnableActiveActiveFeature.IsPresent && !this.VpnType.Equals("RouteBased"))
             {
-                throw new ArgumentException("Virtual Network Gateway VpnType should be " + MNM.VpnType.RouteBased + " when Active-Active feature flag is set to True.");
+                throw new ArgumentException("Virtual Network Gateway VpnType should be " + "RouteBased" + " when Active-Active feature flag is set to True.");
             }
 
             if (this.EnableActiveActiveFeature.IsPresent && this.IpConfigurations.Count != 2)
@@ -298,10 +298,10 @@ namespace Microsoft.Azure.Commands.Network
 
             if (!string.IsNullOrEmpty(GatewaySku)
                 && GatewaySku.Equals(
-                    MNM.VirtualNetworkGatewaySkuTier.UltraPerformance,
+                    "UltraPerformance",
                     StringComparison.InvariantCultureIgnoreCase) && !string.IsNullOrEmpty(GatewayType)
                 && !GatewayType.Equals(
-                    MNM.VirtualNetworkGatewayType.ExpressRoute.ToString(),
+                    "ExpressRoute",
                     StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new ArgumentException("Virtual Network Gateway Need to be Express Route when the sku is UltraPerformance.");
@@ -333,9 +333,9 @@ namespace Microsoft.Azure.Commands.Network
                 if (this.VpnClientAddressPool != null)
                 {
                     // Make sure passed Virtual Network gateway type is RouteBased if P2S VpnClientAddressPool is specified.
-                    if (this.VpnType == null || !this.VpnType.Equals(MNM.VpnType.RouteBased))
+                    if (this.VpnType == null || !this.VpnType.Equals("RouteBased"))
                     {
-                        throw new ArgumentException("Virtual Network Gateway VpnType should be :" + MNM.VpnType.RouteBased + " when P2S VpnClientAddressPool is specified.");
+                        throw new ArgumentException("Virtual Network Gateway VpnType should be :" + "RouteBased" + " when P2S VpnClientAddressPool is specified.");
                     }
 
                     vnetGateway.VpnClientConfiguration.VpnClientAddressPool = new PSAddressSpace();

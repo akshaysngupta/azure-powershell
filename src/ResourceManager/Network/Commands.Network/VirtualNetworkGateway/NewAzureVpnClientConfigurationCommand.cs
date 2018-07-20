@@ -49,8 +49,8 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "ProcessorArchitecture")]
         [ValidateSet(
-            MNM.ProcessorArchitecture.Amd64,
-            MNM.ProcessorArchitecture.X86,
+            "Amd64",
+            "X86",
             IgnoreCase = true)]
         public string ProcessorArchitecture { get; set; }
 
@@ -59,8 +59,8 @@ namespace Microsoft.Azure.Commands.Network
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "Authentication Method")]
         [ValidateSet(
-            MNM.AuthenticationMethod.EAPTLS,
-            MNM.AuthenticationMethod.EAPMSCHAPv2,
+            "EAPTLS",
+            "EAPMSCHAPv2",
             IgnoreCase = true)]
         public string AuthenticationMethod { get; set; }
 
@@ -85,11 +85,11 @@ namespace Microsoft.Azure.Commands.Network
                 PSVpnClientParameters vpnClientParams = new PSVpnClientParameters();
 
                 vpnClientParams.ProcessorArchitecture = string.IsNullOrWhiteSpace(this.ProcessorArchitecture) ?
-                    MNM.ProcessorArchitecture.Amd64.ToString() :
+                    "Amd64" :
                     this.ProcessorArchitecture;
 
                 vpnClientParams.AuthenticationMethod = string.IsNullOrWhiteSpace(this.AuthenticationMethod)
-                    ? MNM.AuthenticationMethod.EAPTLS.ToString()
+                    ? "EAPTLS"
                     : this.AuthenticationMethod;
 
                 // Read the radius server root certificate if present

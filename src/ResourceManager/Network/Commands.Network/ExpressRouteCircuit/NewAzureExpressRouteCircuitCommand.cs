@@ -56,8 +56,8 @@ namespace Microsoft.Azure.Commands.Network
              Mandatory = false,
              ValueFromPipelineByPropertyName = true)]
         [ValidateSet(
-            MNM.ExpressRouteCircuitSkuTier.Standard,
-            MNM.ExpressRouteCircuitSkuTier.Premium,
+            "Standard",
+            "Premium",
             IgnoreCase = true)]
         public string SkuTier { get; set; }
 
@@ -65,8 +65,8 @@ namespace Microsoft.Azure.Commands.Network
              Mandatory = false,
              ValueFromPipelineByPropertyName = true)]
         [ValidateSet(
-            MNM.ExpressRouteCircuitSkuFamily.MeteredData,
-            MNM.ExpressRouteCircuitSkuFamily.UnlimitedData,
+            "MeteredData",
+            "UnlimitedData",
             IgnoreCase = true)]
         public string SkuFamily { get; set; }
 
