@@ -230,6 +230,7 @@
     <Compile Include="Models\PSApplicationGatewayProbeHealthResponseMatch.cs" />
     <Compile Include="Models\PSApplicationGatewaySslPredefinedPolicy.cs" />
     <Compile Include="Models\PSApplicationGatewayAvailableSslOptions.cs" />
+    <Compile Include="Models\PSApplicationGatewayTrustedRootCertificate.cs" />
     <Compile Include="Models\PSConnectionMonitor.cs" />
     <Compile Include="Models\PSConnectionMonitorDestination.cs" />
     <Compile Include="Models\PSConnectionMonitorParameters.cs" />
